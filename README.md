@@ -1,6 +1,7 @@
 # Find the closest zip codes
 
 ## Installation
+git clone https://github.com/akirchmyer/closest-zipcodes-by-location
 npm install
 
 ## Usage
