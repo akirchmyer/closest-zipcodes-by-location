@@ -3,11 +3,7 @@
 import geolib from 'geolib';
 import fs from 'fs';
 
-export class ZipCodes {
-
-	defaultLocations = null
-
-	locations = null
+export default class ZipCodes {
 
 	constructor(zips) {
 		this.defaultLocations = JSON.parse(fs.readFileSync('./dist/zip_codes.json', 'utf8'));
@@ -18,11 +14,11 @@ export class ZipCodes {
 		}
 	}
 
-	all = () => {
+	all() {
 		return defaultLocations;
 	}
 
-	set = (zips) => {
+	set(zips) {
 		if (zips && zips.length) {
 			this.locations = this.defaultLocations.filter((loc) => {
 				return zips.indexOf(loc.zip) >= 0;
@@ -30,7 +26,7 @@ export class ZipCodes {
 		}
 	}
 
-	closest = (zip, count) => {
+	closest(zip, count) {
 		let selected = this.locations.find((loc) => {
 			return loc.zip === zip;
 		});

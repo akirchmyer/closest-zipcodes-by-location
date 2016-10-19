@@ -2,7 +2,15 @@
 
 ## Usage
 
-### Node
+### Installation
+
+git clone https://github.com/akirchmyer/closest-zipcodes-by-location
+npm install
+
+
+### Example: Browser
+
+### Example: Node
 
     // Import
     var ZipCodes = require('./dist/index.js').ZipCodes;
@@ -15,11 +23,6 @@
     console.log(zipCodes.closest(14224, 5))
 
 ## Development
-
-### Installation
-
-git clone https://github.com/akirchmyer/closest-zipcodes-by-location
-npm install
 
 ### Create a new build
 
