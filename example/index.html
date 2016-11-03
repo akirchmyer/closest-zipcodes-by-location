@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../dist/zip_code_search.min.js"></script>
+</head>
+<body>
+
+	<p>
+	Enter a zip code:
+	<input id="zips_input" type="text" value=14224 />
+	</p>
+
+	<p>
+	Enter a # of nearest zip codes:
+	<input id="number_input" type="text" value=5 />
+	</p>
+
+	<p>
+	Limit distance (in miles)
+	<input id="dist_input" type="text" />
+	</p>
+
+	<p>
+	<button id="zips_btn">Go</button>
+	</p>
+
+	<div id="zips">
+	</div>
+
+	<script>
+		document.getElementById('zips_btn').addEventListener('click', function(e) {
+			var  zips_input = document.getElementById('zips_input'),
+				number_input = document.getElementById('number_input'),
+				dist_input = document.getElementById('dist_input'),
+				zips_display = document.getElementById('zips'),
+				zip = zips_input.value,
+				count = number_input.value,
+				dist = dist_input.value,
+				zips = window.ZipCodeSearch.getClosestZipCodes(zip, count, dist);
+
+				zips_display.innerHTML = JSON.stringify(zips);
+		});
+	</script>
+</body>
+</html>

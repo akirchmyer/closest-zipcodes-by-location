@@ -1,14 +1,15 @@
 {
-  "name": "zipcodes",
+  "name": "zip_code_search",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/zip_code_search.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "node csv_to_json && node build_script",
+    "build": "uglifyjs --compress --mangle -- dist/zip_code_search.js > dist/zip_code_search.min.js"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "fast-csv": "^2.3.0"
+  "author": "Andrew Kirchmyer",
+  "license": "MIT",
+  "devDependencies": {
+    "uglify-js": "^2.7.3"
   }
 }
